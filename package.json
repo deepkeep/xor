@@ -1,9 +1,9 @@
 {
   "name": "xor",
   "version": "1.0",
-  "verifiers": [
+  "validators": [
     {
-      "name": "deepkeep/xor-verify"
+      "name": "deepkeep/xor-validate"
     }
   ]
 }
