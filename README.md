@@ -9,13 +9,22 @@ Download from deepkeep:
 curl -LO www.deepkeep.co/deepkeep/xor/package.zip && unzip package.zip -d xor && rm package.zip
 ```
 
+Then create a file `test.lua` and add this to it:
 ```lua
+require 'torch'
+require 'nngraph'
+
 local net = torch.load('xor/network.t7')
 
-print('0 XOR 0 = ' .. net:forward(T({ 0, 0 }))[1])
-print('0 XOR 1 = ' .. net:forward(T({ 0, 1 }))[1])
-print('1 XOR 0 = ' .. net:forward(T({ 1, 0 }))[1])
-print('1 XOR 1 = ' .. net:forward(T({ 1, 1 }))[1])
+print('0 XOR 0 = ' .. net:forward(torch.Tensor({ 0, 0 }))[1])
+print('0 XOR 1 = ' .. net:forward(torch.Tensor({ 0, 1 }))[1])
+print('1 XOR 0 = ' .. net:forward(torch.Tensor({ 1, 0 }))[1])
+print('1 XOR 1 = ' .. net:forward(torch.Tensor({ 1, 1 }))[1])
+```
+
+Then run with
+```bash
+th test.lua
 ```
 
 This will output
