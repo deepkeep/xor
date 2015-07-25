@@ -1,10 +1,9 @@
 {
   "name": "xor",
   "version": "1.0",
-  "model": "trained-network.t7",
   "verifiers": [
     {
-      "name": "FredrikNoren/xor-verify"
+      "name": "deepkeep/xor-verify"
     }
   ]
 }
