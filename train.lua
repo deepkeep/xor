@@ -33,4 +33,4 @@ while err > 0.001 do
 end
 
 -- And finally, we save it to disk
-torch.save('trained-network.t7', net)
+torch.save('network.t7', net)
