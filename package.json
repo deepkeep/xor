@@ -1,6 +1,6 @@
 {
   "name": "xor",
-  "version": "1.6",
+  "version": "1.6.0",
   "validators": [
     {
       "name": "deepkeep/torch-validator",
