@@ -4,9 +4,9 @@ This package provides a torch7 model that can compute xor.
 
 ## Using the pre-trained network
 
-Download from deepkeep:
+Install package:
 ```bash
-curl -LO www.deepkeep.co/deepkeep/xor/package.zip && unzip package.zip -d xor && rm package.zip
+deepkeep install deepkeep/xor
 ```
 
 Then create a file `test.lua` and add this to it:
@@ -14,7 +14,7 @@ Then create a file `test.lua` and add this to it:
 require 'torch'
 require 'nngraph'
 
-local net = torch.load('xor/network.t7')
+local net = torch.load('deepkeep/xor/network.t7')
 
 print('0 XOR 0 = ' .. net:forward(torch.Tensor({ 0, 0 }))[1])
 print('0 XOR 1 = ' .. net:forward(torch.Tensor({ 0, 1 }))[1])
@@ -43,6 +43,5 @@ git clone https://github.com/deepkeep/xor.git
 cd xor
 th train.lua
 # edit package.json to update version etc.
-zip package.1.0.zip package.json README.md network.t7
-curl -u USERNAME -F "package=@package.1.0.zip" www.deepkeep.co/api/v1/upload
+deepkeep publish
 ```
